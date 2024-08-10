@@ -1,0 +1,129 @@
+[gd_scene load_steps=7 format=3 uid="uid://d12gsdtha4c5u"]
+
+[ext_resource type="Texture2D" uid="uid://dl2ja6ad5xfoh" path="res://assets/café.jpg" id="1_ovbdk"]
+[ext_resource type="Theme" uid="uid://cm1vqw4xkcin1" path="res://assets/main_theme.tres" id="1_qgkno"]
+[ext_resource type="Texture2D" uid="uid://cffbm8velk78f" path="res://assets/peep 51/body.png" id="2_c5qyv"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="2_o080e"]
+[ext_resource type="Texture2D" uid="uid://c8fkp6t2b7c02" path="res://assets/peep 87/peep-87.png" id="6_haebe"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0y1vi"]
+load_path = "res://.godot/imported/expression_angry.png-fee6998dc74515921b7342e124257574.ctex"
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qgkno")
+script = ExtResource("2_o080e")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ovbdk")
+expand_mode = 1
+
+[node name="BodyA" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.025
+anchor_right = 0.5
+anchor_bottom = 1.128
+offset_left = -45.2
+offset_top = 124.0
+offset_right = -210.0
+offset_bottom = -12.944
+pivot_offset = Vector2(218, 388)
+texture = ExtResource("2_c5qyv")
+expand_mode = 1
+metadata/_edit_group_ = true
+
+[node name="ExpressionA" type="TextureRect" parent="BodyA"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_0y1vi")
+expand_mode = 1
+
+[node name="BodyB" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.025
+anchor_bottom = 1.102
+offset_left = 253.0
+offset_top = 184.0
+offset_right = 50.2
+offset_bottom = 11.904
+pivot_offset = Vector2(195, 277)
+texture = ExtResource("6_haebe")
+expand_mode = 1
+flip_h = true
+metadata/_edit_group_ = true
+
+[node name="ExpressionB" type="TextureRect" parent="BodyB"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_0y1vi")
+expand_mode = 1
+flip_h = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.046
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_left = -385.0
+offset_top = 59.192
+offset_right = -575.848
+offset_bottom = -443.0
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet,"
+fit_content = true
+
+[node name="Buttons_VBoxContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.341
+anchor_right = 0.758
+anchor_bottom = 1.0
+offset_left = 105.168
+offset_top = 294.0
+offset_right = -47.216
+offset_bottom = -1.0
+grow_horizontal = 2
+metadata/_edit_group_ = true
+
+[node name="Button" type="Button" parent="Buttons_VBoxContainer"]
+layout_mode = 2
+text = "Vestibulum fringilla..."
+
+[node name="Button2" type="Button" parent="Buttons_VBoxContainer"]
+layout_mode = 2
+text = "Donec mi odio?"
+
+[node name="Button3" type="Button" parent="Buttons_VBoxContainer"]
+layout_mode = 2
+text = "Vivamus consectetuer!"

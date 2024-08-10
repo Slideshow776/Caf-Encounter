@@ -1,0 +1,69 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cm1vqw4xkcin1"]
+
+[ext_resource type="StyleBox" uid="uid://hrnlr3foi5sn" path="res://assets/button_black.tres" id="1_a2msn"]
+[ext_resource type="FontFile" uid="uid://bsridfhwabavs" path="res://assets/ComicNeue-Bold.ttf" id="1_lfc2m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uecou"]
+content_margin_left = 11.0
+content_margin_top = 8.0
+content_margin_right = 11.0
+content_margin_bottom = 9.0
+bg_color = Color(0, 0, 0, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyt5o"]
+content_margin_left = 11.0
+content_margin_top = 8.0
+content_margin_right = 11.0
+content_margin_bottom = 9.0
+bg_color = Color(0.403241, 1.20327e-07, 0.218753, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffu7x"]
+content_margin_left = 22.0
+content_margin_top = 15.0
+content_margin_right = 22.0
+content_margin_bottom = 18.0
+bg_color = Color(0, 0.26, 0.138667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ueuuu"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+bg_color = Color(1, 1, 1, 0.941176)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[resource]
+default_font = ExtResource("1_lfc2m")
+default_font_size = 36
+Button/styles/disabled = ExtResource("1_a2msn")
+Button/styles/focus = SubResource("StyleBoxFlat_uecou")
+Button/styles/hover = SubResource("StyleBoxFlat_oyt5o")
+Button/styles/normal = ExtResource("1_a2msn")
+Button/styles/pressed = SubResource("StyleBoxFlat_ffu7x")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_ueuuu")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdhhfg5w2bvy2"]
+
+[ext_resource type="AudioStream" uid="uid://c640bfhbvk2at" path="res://assets/relaxing-jazz-podcast-coffee-shop-music-192283.mp3" id="1_dppej"]
+
+[node name="Music" type="AudioStreamPlayer"]
+stream = ExtResource("1_dppej")
+volume_db = -10.0
+autoplay = true

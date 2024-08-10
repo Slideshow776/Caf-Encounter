@@ -1,0 +1,262 @@
+[gd_scene load_steps=13 format=3 uid="uid://d12gsdtha4c5u"]
+
+[ext_resource type="Texture2D" uid="uid://dl2ja6ad5xfoh" path="res://assets/café.jpg" id="1_ovbdk"]
+[ext_resource type="Theme" uid="uid://cm1vqw4xkcin1" path="res://assets/main_theme.tres" id="1_qgkno"]
+[ext_resource type="Texture2D" uid="uid://cffbm8velk78f" path="res://assets/peep 51/body.png" id="2_c5qyv"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="2_o080e"]
+[ext_resource type="Texture2D" uid="uid://bfviy8baqpxbg" path="res://assets/faces/Very Angry.svg" id="5_1s0m2"]
+[ext_resource type="Texture2D" uid="uid://c8fkp6t2b7c02" path="res://assets/peep 87/peep-87.png" id="6_haebe"]
+[ext_resource type="Texture2D" uid="uid://cfd2h8evlpbpo" path="res://assets/faces/Serious.svg" id="7_7hgmp"]
+[ext_resource type="AudioStream" uid="uid://cm7hqsu1uhgli" path="res://assets/486470__tkky__cafe-amb-01.wav" id="8_r4b7p"]
+
+[sub_resource type="Animation" id="Animation_5et23"]
+resource_name = "intro"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodyA:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.1, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-376, 112), Vector2(-376, 112), Vector2(-64, 112)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BodyB:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 0.7, 0.9, 1.1, 1.3, 1.5, 1.5001, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1096, 190), Vector2(1044.8, 206), Vector2(993.6, 186), Vector2(942.4, 203.333), Vector2(891.2, 180.667), Vector2(840, 190), Vector2(840, 206), Vector2(840, 190)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BodyB:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.4, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.0488692, -0.0488692, 0.0480671]
+}
+
+[sub_resource type="Animation" id="Animation_vgknd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodyA:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-72, 112)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BodyB:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(832, 190)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BodyB:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0480671]
+}
+
+[sub_resource type="Animation" id="Animation_5lalx"]
+resource_name = "outro"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodyB:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(832, 190), Vector2(713.6, 206), Vector2(595.2, 188.222), Vector2(476.8, 204.444), Vector2(358.4, 186.381), Vector2(240, 202.984), Vector2(121.6, 184.387), Vector2(3.19995, 201.791), Vector2(-115.2, 181.86), Vector2(-233.6, 201.93), Vector2(-352, 190)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BodyB:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.023833, -0.0488692]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ogroo"]
+_data = {
+"RESET": SubResource("Animation_vgknd"),
+"intro": SubResource("Animation_5et23"),
+"outro": SubResource("Animation_5lalx")
+}
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qgkno")
+script = ExtResource("2_o080e")
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ovbdk")
+expand_mode = 1
+
+[node name="BodyA" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.025
+anchor_right = 0.5
+anchor_bottom = 1.128
+offset_left = -43.2
+offset_top = 112.0
+offset_right = -200.0
+offset_bottom = -13.944
+rotation = 0.0535098
+pivot_offset = Vector2(218, 388)
+texture = ExtResource("2_c5qyv")
+expand_mode = 1
+
+[node name="ExpressionA" type="TextureRect" parent="BodyA"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 194.0
+offset_top = 116.0
+offset_right = -126.0
+offset_bottom = -316.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_1s0m2")
+expand_mode = 1
+
+[node name="BodyB" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.025
+anchor_bottom = 1.102
+offset_left = 256.0
+offset_top = 190.0
+offset_right = 53.1813
+offset_bottom = 17.904
+rotation = 0.0480671
+pivot_offset = Vector2(195, 277)
+texture = ExtResource("6_haebe")
+expand_mode = 1
+flip_h = true
+metadata/_edit_group_ = true
+
+[node name="ExpressionB" type="TextureRect" parent="BodyB"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 110.0
+offset_top = 133.0
+offset_right = -186.0
+offset_bottom = -310.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_7hgmp")
+expand_mode = 1
+flip_h = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.046
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_left = -385.0
+offset_top = 59.192
+offset_right = -575.848
+offset_bottom = -443.0
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet,"
+fit_content = true
+
+[node name="Buttons_VBoxContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.341
+anchor_right = 0.758
+anchor_bottom = 1.0
+offset_left = 105.168
+offset_top = 294.0
+offset_right = -47.216
+offset_bottom = -1.0
+grow_horizontal = 2
+metadata/_edit_group_ = true
+
+[node name="Button" type="Button" parent="Buttons_VBoxContainer"]
+layout_mode = 2
+text = "Vestibulum fringilla..."
+
+[node name="Button2" type="Button" parent="Buttons_VBoxContainer"]
+layout_mode = 2
+text = "Donec mi odio?"
+
+[node name="Button3" type="Button" parent="Buttons_VBoxContainer"]
+layout_mode = 2
+text = "Vivamus consectetuer!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_ogroo")
+}
+
+[node name="AmbiantSounds" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("8_r4b7p")
