@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d12gsdtha4c5u"]
+[gd_scene load_steps=14 format=3 uid="uid://d12gsdtha4c5u"]
 
 [ext_resource type="Texture2D" uid="uid://dl2ja6ad5xfoh" path="res://assets/café.jpg" id="1_ovbdk"]
 [ext_resource type="Theme" uid="uid://cm1vqw4xkcin1" path="res://assets/main_theme.tres" id="1_qgkno"]
@@ -8,10 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://c8fkp6t2b7c02" path="res://assets/peep 87/peep-87.png" id="6_haebe"]
 [ext_resource type="Texture2D" uid="uid://cfd2h8evlpbpo" path="res://assets/faces/Serious.svg" id="7_7hgmp"]
 [ext_resource type="AudioStream" uid="uid://cm7hqsu1uhgli" path="res://assets/486470__tkky__cafe-amb-01.wav" id="8_r4b7p"]
+[ext_resource type="AudioStream" uid="uid://bgmo8uf00ohic" path="res://assets/toilet sounds.ogg" id="9_qmybo"]
 
 [sub_resource type="Animation" id="Animation_5et23"]
 resource_name = "intro"
-length = 1.8
+length = 3.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -19,7 +20,7 @@ tracks/0/path = NodePath("BodyA:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5, 1.1, 1.8),
+"times": PackedFloat32Array(2, 2.6, 3.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-376, 112), Vector2(-376, 112), Vector2(-64, 112)]
@@ -31,10 +32,10 @@ tracks/1/path = NodePath("BodyB:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5, 0.7, 0.9, 1.1, 1.3, 1.5, 1.5001, 1.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(2, 2.2, 2.4, 2.6, 2.8, 3, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1096, 190), Vector2(1044.8, 206), Vector2(993.6, 186), Vector2(942.4, 203.333), Vector2(891.2, 180.667), Vector2(840, 190), Vector2(840, 206), Vector2(840, 190)]
+"values": [Vector2(1096, 190), Vector2(1044.8, 206), Vector2(993.6, 186), Vector2(942.4, 203.333), Vector2(891.2, 180.667), Vector2(840, 190), Vector2(840, 190)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -43,7 +44,7 @@ tracks/2/path = NodePath("BodyB:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.4, 1.8),
+"times": PackedFloat32Array(0, 2.9, 3.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [-0.0488692, -0.0488692, 0.0480671]
@@ -184,7 +185,7 @@ anchor_right = 1.025
 anchor_bottom = 1.102
 offset_left = 256.0
 offset_top = 190.0
-offset_right = 53.1813
+offset_right = 53.1814
 offset_bottom = 17.904
 rotation = 0.0480671
 pivot_offset = Vector2(195, 277)
@@ -260,3 +261,8 @@ libraries = {
 [node name="AmbiantSounds" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("8_r4b7p")
+
+[node name="ToiletSounds" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_qmybo")
+volume_db = 8.211

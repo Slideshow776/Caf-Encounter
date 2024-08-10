@@ -21,6 +21,7 @@ var levels := [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 @onready var expression_b = %ExpressionB
 @onready var animation_player = %AnimationPlayer
 @onready var ambiant_sounds = %AmbiantSounds
+@onready var toilet_sounds = %ToiletSounds
 
 
 func _ready():
@@ -29,9 +30,11 @@ func _ready():
 	
 	animation_player.play("intro")
 	
+	toilet_sounds.play()
+	
 	ambiant_sounds.play(randf() * ambiant_sounds.stream.get_length())
 	var tween := create_tween()
-	tween.tween_interval(0.7)
+	tween.tween_interval(2.0)
 	tween.tween_callback(show_text.bind(0, false))
 	tween.tween_property(ambiant_sounds, "volume_db", -10, 4.0)
 	
