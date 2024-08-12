@@ -7,8 +7,47 @@
 [ext_resource type="Texture2D" uid="uid://bfviy8baqpxbg" path="res://assets/faces/Very Angry.svg" id="5_1s0m2"]
 [ext_resource type="Texture2D" uid="uid://c8fkp6t2b7c02" path="res://assets/peep 87/peep-87.png" id="6_haebe"]
 [ext_resource type="Texture2D" uid="uid://cfd2h8evlpbpo" path="res://assets/faces/Serious.svg" id="7_7hgmp"]
-[ext_resource type="AudioStream" uid="uid://cm7hqsu1uhgli" path="res://assets/486470__tkky__cafe-amb-01.wav" id="8_r4b7p"]
+[ext_resource type="AudioStream" uid="uid://c3trf2trmd74d" path="res://assets/486470__tkky__cafe-amb-01.mp3" id="8_q2iib"]
 [ext_resource type="AudioStream" uid="uid://bgmo8uf00ohic" path="res://assets/toilet sounds.ogg" id="9_qmybo"]
+
+[sub_resource type="Animation" id="Animation_vgknd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodyA:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-72, 112)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BodyB:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(832, 190)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BodyB:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0480671]
+}
 
 [sub_resource type="Animation" id="Animation_5et23"]
 resource_name = "intro"
@@ -48,45 +87,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [-0.0488692, -0.0488692, 0.0480671]
-}
-
-[sub_resource type="Animation" id="Animation_vgknd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BodyA:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-72, 112)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BodyB:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(832, 190)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("BodyB:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0480671]
 }
 
 [sub_resource type="Animation" id="Animation_5lalx"]
@@ -192,7 +192,6 @@ pivot_offset = Vector2(195, 277)
 texture = ExtResource("6_haebe")
 expand_mode = 1
 flip_h = true
-metadata/_edit_group_ = true
 
 [node name="ExpressionB" type="TextureRect" parent="BodyB"]
 unique_name_in_owner = true
@@ -200,10 +199,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 110.0
-offset_top = 133.0
-offset_right = -186.0
-offset_bottom = -310.0
+offset_left = 105.0
+offset_top = 125.0
+offset_right = -182.981
+offset_bottom = -306.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_7hgmp")
@@ -218,10 +217,10 @@ anchor_left = 0.5
 anchor_top = 0.046
 anchor_right = 0.999
 anchor_bottom = 1.0
-offset_left = -385.0
-offset_top = 59.192
-offset_right = -575.848
-offset_bottom = -443.0
+offset_left = -321.0
+offset_top = 51.192
+offset_right = -458.848
+offset_bottom = -451.0
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet,"
 fit_content = true
@@ -260,7 +259,7 @@ libraries = {
 
 [node name="AmbiantSounds" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("8_r4b7p")
+stream = ExtResource("8_q2iib")
 
 [node name="ToiletSounds" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
